@@ -1,24 +1,32 @@
 <template lang="pug">
-main.responsive
+
+main.responsive.vertical-padding.vertical-margin
   .grid
     .s12.m6.l6.m.l
       article.round.no-padding.blur.no-elevate.page.active.left
-        img.responsive.medium-height.top-round(:src="data.wallpaper")
-        .medium-space
-        .large-padding
+        img.responsive.large-height.round(:src="'/dog.png'")
+        .absolute.bottom.left.right.padding.bottom-shadow
           .medium-space
+          nav
+            nav.vertical.tiny-space
+              h3.bold.no-padding.no-margin.white-text So U Kno
+              h6.small.white-text Overmono
+            .max
+            button.border
+              i favorite
           nav
             label.slider
               input(v-model="data.time" type="range")
               span
               .tooltip
           .medium-space
-          nav.center-align
-            button.fill.circle.large
+          nav.center-align.tiny-space
+            button.extra.circle.large-padding.transparent
+              <div class="shape sided-cookie6 max no-space rotate"></div>
+              i pause
+            button.fill.large.vertical-padding
               i skip_previous
-            button.extra
-              i play_arrow
-            button.fill.circle.large
+            button.fill.large.vertical-padding
               i skip_next
     .s12.m6.l6.m.l
       article.round.large-padding.blur.no-elevate.page.active.top
@@ -47,11 +55,11 @@ main.responsive
           img.large.round(:src="data.wallpaper")
           .max
             nav.center-align
-              button.transparent.circle.large
-                i skip_previous
-              button.fill.extra
+              button.extra.circle.large-padding
                 i play_arrow
-              button.transparent.circle.large
+              button.fill.large.vertical-padding
+                i skip_previous
+              button.fill.large.vertical-padding
                 i skip_next
     .s12.s
       article.round.large-padding.blur.no-elevate.page.active.bottom
@@ -74,7 +82,7 @@ import utils from "../shared/utils";
 async function updateTheme(source: string, title: string) {
   await sharedDomain.updateTheme(data.value, source || "#f9bd49");
   data.value.wallpaper = source || "/classic-utility-jacket.jpg";
-  data.value.title = title || "Classic utility jacket";
+  data.value.title = title || "Music Player";
   await reloadWallpaper();
 }
 

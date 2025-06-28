@@ -25,17 +25,17 @@
 
 <script setup lang="ts">
 import { onMounted } from "vue";
-import home from "./home.vue";
-import data from "./data";
 import sharedDomain from "../shared/domain";
 import { redirect } from "../shared/router";
 import utils from "../shared/utils";
+import data from "./data";
+import home from "./home.vue";
 
 onMounted(async () => {
   document.title = "Music Player - Beer CSS";
   await sharedDomain.updateTheme(data.value, "#f9bd49", "dark");
   data.value.wallpaper = "/classic-utility-jacket.jpg";
-  data.value.title = "Classic utility jacket";
+  data.value.title = "Music Player";
   data.value.time = 50;
   data.value.showPage = true;
 

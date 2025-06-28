@@ -1,13 +1,13 @@
 import { ref, type Ref } from "vue";
-import { type IMusicPlayer } from "./interfaces";
 import theme from "../shared/theme";
+import { type IMusicPlayer } from "./interfaces";
 
 const data: IMusicPlayer = {
   ...theme,
   showPage: false,
-  showWallpaper: true,
-  title: "Classic Utility Jacket",
-  wallpaper: "/classic-utility-jacket.jpg",
+  showWallpaper: false,
+  title: "Music Player",
+  wallpaper: "/dog.png",
   time: 0,
 };
 
